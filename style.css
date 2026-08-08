@@ -1016,3 +1016,149 @@ header {
     flex-wrap: wrap;
   }
 }
+
+/* ==========================
+   ARTWORK SHOWCASE CARD MODAL
+========================== */
+.artwork-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.artwork-modal-content {
+  background: #1E1E24;
+  border: 1px solid #33333D;
+  border-radius: 16px;
+  max-width: 850px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 30px;
+  padding: 35px;
+  position: relative;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+  animation: modalPop 0.3s ease;
+}
+
+.modal-image-wrap {
+  background: #111113;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 400px;
+}
+
+.modal-image-wrap img {
+  max-width: 100%;
+  max-height: 360px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.modal-details-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #FFFFFF;
+}
+
+.modal-details-wrap h3 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.modal-details-wrap p {
+  color: #AAAAAA;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.modal-details-wrap .modal-card-price {
+  font-size: 28px;
+  font-weight: 700;
+  color: #38BDF8;
+  margin-bottom: 20px;
+}
+
+.artwork-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: #AAAAAA;
+  font-size: 32px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.artwork-modal-close:hover {
+  color: #FFFFFF;
+}
+
+@keyframes modalPop {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .artwork-modal-content {
+    grid-template-columns: 1fr;
+    padding: 25px;
+  }
+}
+
+/* ==========================
+   CUSTOM COMMISSION SECTION
+========================== */
+
+.commission-section {
+  padding: 100px 8%;
+  background: #F9FAFB;
+  border-top: 1px solid #E5E7EB;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.commission-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.commission-form {
+  background: #FFFFFF;
+  padding: 50px;
+  border-radius: 24px;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .commission-form {
+    padding: 30px 20px;
+  }
+}
